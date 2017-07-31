@@ -7,7 +7,6 @@ mixin css(file, media)
 mixin getField(data, classes)
 	if data.type == 'select'
 		select(
-			value="" + (data.value || '') 
 			class="" + (classes || '')
 		)
 			if data.placeholder
