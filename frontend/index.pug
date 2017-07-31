@@ -1,0 +1,55 @@
+extends pug/template
+
+block content
+	section.jumbotron#reservation
+		.container.jumbotron__wrap
+			.jumb-content.jumbotron__content
+				h1.jumb-content__title Just Balance your Mind &amp; Body 
+				h2.jumb-content__slogan Create the healthyv living for yourself
+			+form({title: 'Trial Class', submit: 'Try it'}, formFields, 'form_jumb')
+	section.our-classes
+		.container
+			h2.section-title.text-center Yoga FEATURE PROGRAM
+			p.section-subtitle.text-center Our Classes
+			.our-classes__row
+				each yoga in yogas
+					.yoga.our-classes__item
+						figure.yoga__img
+							img(src="" + yoga.img, alt="")
+						.yoga__content
+							h4.yoga__title= yoga.title
+							p.yoga__text= yoga.text
+							span.yoga__signature= yoga.signature
+	section#gallery
+		each picture in gallery
+			figure.gallery-item.gallery__item
+				.gallery__wrap
+					img(src="" + picture, alt="").gallery-item__img
+					a(href="javascript:void(0)").gallery-item__caption
+						span.icon.gallery-item__icon
+							i.ic-search
+	section#about
+		.container
+			.about__wrap
+				.about__content
+					h2.section-title About us
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor it in lorei voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ispum loting sokui.
+				.about__slider
+					+imageSlider(aboutImages)
+	section.features
+		.container
+			.features__wrap
+				each feature in features
+					.feature.features__feature
+						span.icon-o.feature__icon
+							i(class="" + feature.icon)
+						h5.feature__title= feature.title
+						p.feature__text= feature.text
+	section.container
+		.order-wrap
+			+order(order.light, 'order-wrap__order')
+			+order(order.middle, 'order-wrap__order')
+			+order(order.full, 'order-wrap__order')
+	section#reviews
+		.container
+			+reviewsSlider(reviews)

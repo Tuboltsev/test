@@ -1,0 +1,33 @@
+//* Typography */
+$font-primary: 'Open Sans', sans-serif;
+$font-secondary: 'Freestyle Script', serif;
+$font-logo: 'champagne__limousines', sans-serif;
+
+$h1-size: 48px;
+$h2-size: 30px;
+$h3-size: 25.64px;
+$h4-size: 20px;
+$h5-size: 18px;
+$p-size: 14px;
+$p-size-lg: 16px;
+
+//* Colors */
+$dark-primary: #5363db;
+$primary: #5b6ceb;
+$primary-text: #555555;
+$light-primary-text: #777777;
+$secondary-text: #888888;
+$light-secondary-text: #999999;
+$divider-color: #D7D7D7;
+
+$container-width-max: 1200px;
+$container-width-min: 320px;
+
+//* Breakpoints */
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// Path
+$img: '../img';
+$fonts: '../fonts';

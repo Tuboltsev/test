@@ -1,0 +1,10 @@
+mixin header
+	header#header
+		.container
+			a(href="javascript:void(0)").logo.header__logo
+				i.svg-logo.svg-logo_logo
+				span.logo__text.logo__text_header YOGA
+			+sandwich('header__toggle')
+			.header__navigation
+				+nav(nav[0], 'header__nav header__nav_left')
+				+nav(nav[1], 'header__nav header__nav_right')

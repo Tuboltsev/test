@@ -1,0 +1,26 @@
+.price {
+	position: relative;
+	padding-left: 30px;
+	color: #fff;
+	font-weight: bold;
+	font-family: $font-primary;
+}
+
+.price__currency {
+	position: absolute;
+	left: 0; top: 50%;
+	font-size: 32px;
+	transform: translateY(-50%);
+}
+
+.price__amount {
+	line-height: 1;
+	font-size: 55.35px;
+	@media (min-width: $screen-md-min) {
+		font-size: 67.35px;
+	}
+}
+
+.price__term {
+	font-size: 18px;
+}

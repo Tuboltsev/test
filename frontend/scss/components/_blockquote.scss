@@ -1,0 +1,63 @@
+.blockquote {
+	min-height: 90px;
+	margin: 0;
+}
+
+.blockquote__text {
+	position: relative;
+	padding: 0 30px;
+	color: $primary-text;
+	line-height: 22px;
+	font-style: italic;
+	font-family: $font-primary;
+	font-size: $p-size;
+	&:before, &:after {
+		position: absolute;
+		color: $primary;
+		line-height: .85;
+		font-style: normal;
+		font-size: 60px;
+		font-family: $font-primary;
+	}
+	&:before {
+		content: '“';
+		right: 100%; top: 0;
+		margin-right: -20px;
+	}
+	&:after {
+		content: '”';
+		right: 0; top: 100%;
+	}
+	@media (min-width: 540px) {
+		&:before {
+			margin-right: 0;
+		}
+	}
+	@media (min-width: 640px) {
+		padding-left: 50px;
+	}
+}
+
+.blockquote__footer {
+	position: relative;
+	padding-left: 30px;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0; bottom: 0;
+		height: 75px; width: 2px;
+		background-color: $divider-color;
+	}
+}
+
+.blockquote__author {
+	display: block;
+	color: $light-primary-text;
+	font: $p-size $font-primary;
+}
+
+.blockquote__author-name {
+	color: $primary;
+	font: bold $p-size-lg $font-primary;
+	text-decoration: none;
+}

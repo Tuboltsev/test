@@ -1,0 +1,219 @@
+@import 'components/_sandwish.scss';
+@import 'components/_form.scss';
+@import 'components/_select.scss';
+@import 'components/_image-slider.scss';
+@import 'components/_price.scss';
+@import 'components/_order.scss';
+@import 'components/_profile-pic.scss';
+@import 'components/_blockquote.scss';
+@import 'components/_reviews-slider.scss';
+@import 'components/_social.scss';
+
+.logo {
+	display: inline-block;
+	color: $dark-primary;
+	font: bold 24px $font-logo;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.svg-logo_logo {
+	display: block;
+	margin-bottom: 5px;
+}
+
+
+// .nav {}
+
+.nav__item {
+	position: relative;
+	display: block;
+	margin: 0 15px;
+	color: $primary-text;
+	font: 600 #{$p-size}/50px $font-primary;
+	text-decoration: none;
+	&:after {
+		content: '';
+		display: none;
+		position: absolute;
+		left: 50%;
+		bottom: 10px;
+		height: 1px; width: 100%;
+		background-color: $dark-primary;
+		transform: translateX(-50%);
+	}
+	&.active, &:hover {
+		color: $dark-primary;
+		&:after {
+			display: inline-block;
+		}
+	}
+	@media (min-width: $screen-md-min) {
+		display: inline-block;
+		&:after {
+			width: 30px;
+		}
+	}
+}
+
+
+// YOGA ITEM
+.yoga {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-wrap: wrap;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0px 5px 20px 0px rgba(#000, .1);
+	overflow: hidden;
+	@media (min-width: 520px) {
+		height: 220px;
+		flex-wrap: nowrap;
+	}
+	@media (min-width: $screen-lg-min) {
+		height: 300px;
+	}
+}
+
+.yoga__img {
+	flex-shrink: 0;
+	width: 100%;
+	height: 220px;
+	margin: 0;
+	overflow: hidden;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	@media (min-width: 520px) {
+		width: 200px;
+		height: auto;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		width: 270px;
+	}
+}
+
+.yoga__content {
+	// display: inline-block;
+	padding: 15px 20px;
+	overflow: hidden;
+	@media (min-width: $screen-lg-min) {
+		padding-top: 45px;
+		padding-bottom: 45px;
+		padding-right: 45px;
+	}
+}
+
+.yoga__title {
+	margin: 0;
+	color: $light-primary-text;
+	font: bold 17px $font-primary;
+	text-transform: uppercase;
+	@media (min-width: $screen-lg-min) {
+		font-size: $h4-size;
+	}
+}
+
+.yoga__text {
+	color: $primary-text;
+	font: #{$p-size}/22px $font-primary;
+	margin: 10px 0;
+	@media (min-width: $screen-lg-min) {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+.yoga__signature {
+	color: $light-secondary-text;
+	font: #{$p-size}/22px $font-primary;
+}
+
+
+
+// GALLERY
+.gallery-item {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.gallery-item__img {
+	position: absolute;
+	left: 0; top: 0;
+}
+
+.gallery-item__caption {
+	position: absolute;
+	left: 0; top: 0;
+	display: none;
+	width: 100%; height: 100%;
+	background-color: rgba($primary, .8);
+}
+
+.gallery-item__icon {
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.gallery-item:hover .gallery-item__caption {
+	display: inline-block;
+}
+
+
+
+.feature {
+	display: inline-block;
+	color: #fff;
+	line-height: 27px;
+	text-align: center;
+}
+
+.feature__icon {
+	margin: 0 auto;
+}
+
+.feature__title {
+	font: bold $h5-size $font-primary;
+	text-transform: uppercase;
+}
+
+.feature__text {
+	font: $p-size-lg $font-primary;
+}
+
+
+
+.contact-item {
+	position: relative;
+	display: inline-block;
+	padding-left: 15px;
+	margin-left: 20px;
+	color: #fff;
+	vertical-align: top;
+	p {
+		margin: 0;
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+.contact-item__icon {
+	position: absolute;
+	right: 100%; top: 0;
+}

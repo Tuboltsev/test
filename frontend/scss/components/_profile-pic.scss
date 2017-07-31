@@ -1,0 +1,21 @@
+.profile-pic {
+	$size: 145px;
+	display: inline-block;
+	width: $size; height: $size;
+	border: 10px solid #fff;
+	margin: 2px;
+	background-color: #fff;
+	border-radius: $size;
+	box-shadow: 0 0 0 2px $divider-color;
+	overflow: hidden;
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.profile-pic_xs {
+	$size: 70px;
+	width: $size; height: $size;
+	border-width: 3px;
+}

@@ -1,0 +1,152 @@
+.reviews-slider {
+	position: relative;
+	margin-bottom: 35px;
+}
+
+.review-slider__for {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.1);
+	@media (min-width: $screen-sm-min) {
+		margin-right: 50px;
+	}
+	@media (min-width: 1300px) {
+		margin-right: 0;
+	}
+}
+
+.reviews-slide {
+	padding: 38px 15px 64px;
+	border-radius: 8px;
+	text-align: center;
+	overflow: hidden;
+	@extend %clearfix;
+	@media (min-width: 640px) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@media (min-width: $screen-sm-min) {
+		padding-right: 100px;
+		padding-left: 63px;
+	}
+	@media (min-width: $screen-lg-min) {
+		padding-right: 150px;
+	}
+}
+
+.reviews-slide__pic {
+	@media (min-width: 540px) {
+		float: left;
+	}
+}
+
+.review-slider__content {
+	text-align: left;
+	@media (min-width: 540px) {
+		padding-left: 40px;
+		margin-left: 145px;
+	}
+}
+
+
+.review-slider__nav {
+	position: absolute;
+	bottom: -38px; left: 50%;
+	width: 200px;
+	transform: translateX(-50%);
+}
+
+.reviews-nav__wrap {
+	display: inline-flex;
+	align-items: center;
+}
+
+.reviews-nav__pic {}
+
+.reviews-nav__caption {
+	display: inline-block;
+	padding-left: 15px;
+	font-family: $font-primary;
+}
+
+.reviews-nav__author-name {
+	margin: 0;
+	color: $primary-text;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.reviews-nav__author {
+	color: $light-primary-text;
+	font-size: 12px;
+}
+
+
+// CUSTOMIZE SLICK
+.review-slider__for .slick-dots {
+	position: absolute;
+	right: -45px; top: 45px;
+	padding: 0;
+	list-style: none;
+	li:not(:last-of-type) {
+		margin-bottom: 18px;
+	}
+	button {
+		$size: 16px;
+		display: inline-block;
+		width: $size; height: $size;
+		padding: 0;
+		margin: 2px;
+		border: 3px solid #fff;
+		background-color: transparent;
+		text-indent: -99999px;
+		border-radius: $size;
+		box-shadow: 0 0 0 2px $divider-color;
+		cursor: pointer;
+		&:hover {
+			box-shadow: 0 0 0 2px $primary;
+		}
+	}
+	li.slick-active button {
+		background-color: $primary;
+		box-shadow: 0 0 0 2px $primary;
+	}
+}
+
+
+.review-slider__nav .slick-arrow {
+	$size: 29px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	width: $size; height: $size;
+	padding: 0;
+	border: none;
+	background-color: #fff;
+	text-indent: -99999px;
+	border-radius: $size;
+	box-shadow: 0px 9px 9px 0px rgba(#000, .1);
+	cursor: pointer;
+	z-index: 99999;
+	transform: translateY(-50%);
+	&:before {
+		content: '';
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.review-slider__nav .slick-prev {
+	left: -58px;
+	&:before {
+		@extend %ic-arrow-l_xs;
+	}
+}
+
+.review-slider__nav .slick-next {
+	right: -50px;
+	&:before {
+		@extend %ic-arrow-r_xs;
+	}
+}

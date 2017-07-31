@@ -1,0 +1,127 @@
+//- HELPER MIXINS
+mixin css(file, media)
+	- media = media || 'all'
+	link(rel="stylesheet", href=file, media=media)
+
+
+mixin getField(data, classes)
+	if data.type == 'select'
+		select(
+			value="" + (data.value || '') 
+			class="" + (classes || '')
+		)
+			if data.placeholder
+				option(value="hide")= data.placeholder
+			each option in data.options
+				option(value="" + option)= option
+	else if data.type == 'textarea'
+		textarea(
+			placeholder="" + (data.placeholder || '') 
+			value="" + (data.value || '') 
+			class="" + (classes || '')
+		)
+	else if data.type == 'button'
+		button(
+			type="" + (data.inputType || 'button')
+			class="" + (classes || '')
+		)= (data.value || '')
+	else 
+		input(
+			type="" + (data.inputType || 'text')
+			placeholder="" + (data.placeholder || '') 
+			value="" + (data.value || '') 
+			class="" + (classes || '')
+		)
+
+
+
+//- COMPONENTS
+mixin nav(items, classes)
+	- classes = classes || '';
+	nav(class="nav " + classes)
+		each item in items
+			a(href="" + item.anchor).nav__item= item.title
+
+
+
+mixin sandwich(classes)
+	div(class="nav_button " + classes || '')
+		#burger
+			span
+			span
+			span
+			span
+
+
+
+mixin form(text, fields, classes)
+	- classes = classes || '';
+	form(class="form " + classes)
+		if text.title
+			h3.form__title= text.title
+		each field in fields
+			.form-field
+				- var fieldClass = field.type == 'select' ? 'select form-select' : field.type == 'textarea' ? 'form-textarea' : 'form-input';
+				- fieldClass += ' form__control ' + field.classes;
+				+getField(field, fieldClass)
+				p.form-info= field.info
+		button(type="submit").form-button.form__submit= text.submit || 'Send'
+
+
+
+mixin imageSlider(images, classes)
+	- classes = classes || '';
+	div(class="image-slider " + classes)
+		each image in images
+			img(src="" + image, alt="").image-slider__img
+
+
+mixin order(data, classes)
+	- classes = classes || '';
+	div(class="order " + classes)
+		.order__header
+			.price
+				i.currecy.price__currency
+				span.price__amount= data.price
+				span.price__term / month
+		.order__body
+			ul.order__list
+				each item in data.list
+					li= item
+			a(href="javascript:void(0)").order__btn Buy now
+
+
+mixin reviewsSlider(data, classes)
+	- classes = classes || '';
+	div(class="reviews-slider " + classes)
+		.review-slider__for
+			each item in data
+				.review-slider__slide
+					.reviews-slide
+						figure.profile-pic.reviews-slide__pic
+							img(src="" + item.pic, alt="")
+						.review-slider__content
+							blockquote.blockquote
+								.blockquote__text
+									p= item.text
+							footer.blockquote__footer
+								span.blockquote__author Trainer
+								a(href="javascript:void(0)").blockquote__author-name= item.trainer
+		.review-slider__nav
+			- for(var i = 1; i < data.length; i++)
+				- var item = data[i];
+				.reviews-nav
+					.reviews-nav__wrap
+						figure.profile-pic.profile-pic_xs.reviews-nav__pic
+							img(src="" + item.pic, alt="")
+						.reviews-nav__caption
+							p.reviews-nav__author-name= item.trainer
+							span.reviews-nav__author Trainer
+			- var lastItem = data[0];
+			.reviews-nav
+				.reviews-nav__wrap
+					figure.profile-pic.profile-pic_xs.reviews-nav__pic
+						img(src="" + lastItem.pic, alt="")
+					.reviews-nav__caption
+						p.reviews-nav__author-name= lastItem.trainer
+						span.reviews-nav__author Trainer
